@@ -158,6 +158,7 @@ const consoleOptions = isSpanish
           <span>{c.profile.location} · {c.profile.education}</span>
         </div>
         <div class="hero-scroll-cue"><span></span>{editorial.scroll}<b>↓</b></div>
+        <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="true">{isSpanish ? 'Animación completa · cambiar a suave' : 'Full animation · switch to gentle'}</button>
       </div>
 
       <div class="hero-visual" data-reveal style="--reveal-delay: 140ms">
@@ -295,6 +296,16 @@ const consoleOptions = isSpanish
   const root = document.documentElement;
   const isSpanish = root.lang === 'es';
   root.classList.add('js');
+  root.dataset.motion = 'full';
+  const motionToggle = document.querySelector('[data-motion-toggle]');
+  motionToggle?.addEventListener('click', () => {
+    const full = root.dataset.motion !== 'full';
+    root.dataset.motion = full ? 'full' : 'gentle';
+    motionToggle.setAttribute('aria-pressed', String(full));
+    motionToggle.textContent = isSpanish
+      ? (full ? 'Animación completa · cambiar a suave' : 'Animación suave · activar completa')
+      : (full ? 'Full animation · switch to gentle' : 'Gentle animation · enable full');
+  });
 
   let previousScrollY = window.scrollY;
   let scrollDirection = 'down';

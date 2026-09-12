@@ -334,6 +334,31 @@ button:focus-visible {
   transform-origin: left center;
 }
 
+.motion-toggle {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  background: transparent;
+  color: var(--red-deep);
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  cursor: pointer;
+}
+
+html.js[data-motion='full'] [data-section].is-page-entering [data-reveal] {
+  animation: section-page-content-down 2400ms cubic-bezier(0.32, 0.12, 0.24, 1) both !important;
+  animation-delay: calc(var(--reveal-delay, 0ms) + 90ms) !important;
+}
+
+html.js[data-motion='full'] [data-section][data-page-direction='up'].is-page-entering [data-reveal] {
+  animation-name: section-page-content-up !important;
+}
+
+html.js[data-motion='gentle'] [data-section].is-page-entering [data-reveal] {
+  animation: section-page-content-reduced 420ms ease both !important;
+}
+
 html.js [data-section] {
   position: relative;
   perspective: 1400px;
