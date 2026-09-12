@@ -9,15 +9,19 @@ const {
   items,
   label = 'Live technical snapshot',
   options = [],
-  optionsLabel = 'Technology options'
+  optionsLabel = 'Technology options',
+  optionsHint = 'Select a technology to inspect its context.',
+  statusPrefix = 'Context loaded · '
 }: {
   items: string[];
   label?: string;
   options?: ConsoleOption[];
   optionsLabel?: string;
+  optionsHint?: string;
+  statusPrefix?: string;
 } = Astro.props;
 ---
-<div class="terminal-panel" aria-label={label} data-terminal-panel data-reveal style="--reveal-delay: 280ms">
+<div class="terminal-panel" aria-label={label} data-terminal-panel data-status-prefix={statusPrefix} data-reveal style="--reveal-delay: 280ms">
   <div class="terminal-panel__head">
     <span class="terminal-panel__dots"><i></i><i></i><i></i></span>
     <span>FIELD NOTES / LIVE</span>
@@ -25,7 +29,7 @@ const {
   <div class="terminal-panel__lines">
     {items.map((line, index) => (
       <p>
-        <span class="terminal-panel__prompt">›</span>
+        <span class="terminal-panel__prompt">{index === 0 ? '$' : '›'}</span>
         <span data-console-value={index} aria-live={index === 1 ? 'polite' : undefined}>{line.replace(/^\$\s*/, '')}</span>
       </p>
     ))}
@@ -39,11 +43,18 @@ const {
           data-console-option
           data-command={option.command}
           data-detail={option.detail}
+          data-label={option.label}
           aria-pressed={index === 0 ? 'true' : 'false'}
         >
           {option.label}
         </button>
       ))}
     </div>
+  ) : null}
+  {options.length > 0 ? (
+    <p class="terminal-panel__hint">
+      <span class="terminal-panel__prompt">↳</span>
+      <span data-console-status>{optionsHint}</span>
+    </p>
   ) : null}
 </div>

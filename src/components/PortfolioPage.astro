@@ -25,16 +25,16 @@ const editorial = isSpanish
       heroAccent: 'aguantan el ruido.',
       scroll: 'Desplaza para leer',
       selectedIntro: 'Una selección de problemas reales, decisiones técnicas y resultados que pueden sostenerse cuando el proyecto sale del papel.',
-      issueLabel: 'El diario del desarrollador',
+      issueLabel: 'El d-IA-rio del desarrollador',
       issueTitle: 'Código con oficio',
       issueCaption: 'Backend, operaciones y soporte unidos para que las cosas importantes sigan funcionando.',
       issueStamp: 'HECHO\nCON\nCUIDADO',
       ticker: ['ColdFusion', 'Lucee', 'React', 'Angular', 'Java', 'MySQL', 'MongoDB', 'Docker', 'Laravel', 'TestBox', 'Linux'],
       workKicker: '01 / TRABAJO SELECCIONADO',
-      workTitle: 'Historias de sistemas reales',
-      workAside: 'No colecciono tecnologías por moda. Me interesa entender el contexto, quitar fricción y dejar una solución más clara que la que encontré.',
-      experienceKicker: '02 / EXPERIENCIA PROFESIONAL',
-      experienceTitle: 'El trabajo que me ha formado',
+      workTitle: 'Histor-IA-s de sistemas reales',
+      workAside: 'No colecciono tecnolog-IA-s por moda. Me interesa entender el contexto, quitar fricción y dejar una solución más clara que la que encontré.',
+      experienceKicker: '02 / EXPERIENC-IA PROFESIONAL',
+      experienceTitle: 'Experienc-IA profesional',
       quote: 'La mejor solución no es la que más ruido hace. Es la que sigue respondiendo cuando todos los demás ya se han ido.',
       quoteByline: 'Nota de trabajo · JMAT',
       deskKicker: '03 / LA MESA DE TRABAJO',
@@ -62,7 +62,7 @@ const editorial = isSpanish
       workTitle: 'Stories from real systems',
       workAside: 'I do not collect technologies for fashion. I care about understanding context, removing friction and leaving a clearer solution behind.',
       experienceKicker: '02 / PROFESSIONAL EXPERIENCE',
-      experienceTitle: 'The work that shaped me',
+      experienceTitle: 'Professional experience',
       quote: 'The best solution is not the one that makes the most noise. It is the one that keeps responding after everyone else has left.',
       quoteByline: 'Working note · JMAT',
       deskKicker: '03 / THE WORKBENCH',
@@ -75,30 +75,30 @@ const editorial = isSpanish
 
 const consoleOptions = isSpanish
   ? [
-      { label: 'ColdFusion', command: 'inspect coldFusion', detail: 'CFML para lógica de negocio y aplicaciones web.' },
-      { label: 'Lucee', command: 'inspect lucee', detail: 'Runtime CFML con el que trabajo en aplicaciones existentes.' },
-      { label: 'React', command: 'inspect react', detail: 'Interfaces componibles y estados interactivos.' },
-      { label: 'Angular', command: 'inspect angular', detail: 'Aplicaciones web estructuradas y mantenibles.' },
-      { label: 'Java', command: 'inspect java', detail: 'Desarrollo y soporte en ecosistemas JVM.' },
-      { label: 'MySQL', command: 'inspect mysql', detail: 'Consultas, datos relacionales y mantenimiento de aplicaciones.' },
-      { label: 'MongoDB', command: 'inspect mongodb', detail: 'Persistencia documental para los casos que la requieren.' },
-      { label: 'Docker', command: 'inspect docker', detail: 'Tecnología conocida dentro del contexto de las aplicaciones, no como foco principal.' },
-      { label: 'Laravel', command: 'inspect laravel', detail: 'Framework PHP para aplicaciones web y servicios.' },
-      { label: 'TestBox', command: 'inspect testbox', detail: 'Framework de testing para ColdFusion/Lucee.' },
-      { label: 'Linux', command: 'inspect linux', detail: 'Entornos y soporte técnico dentro del trabajo diario.' }
+      { label: 'ColdFusion', command: 'tech --info coldFusion', detail: 'CFML para lógica de negocio y aplicaciones web.' },
+      { label: 'Lucee', command: 'tech --info lucee', detail: 'Runtime CFML con el que trabajo en aplicaciones existentes.' },
+      { label: 'React', command: 'tech --info react', detail: 'Interfaces componibles y estados interactivos.' },
+      { label: 'Angular', command: 'tech --info angular', detail: 'Aplicaciones web estructuradas y mantenibles.' },
+      { label: 'Java', command: 'tech --info java', detail: 'Desarrollo y soporte en ecosistemas JVM.' },
+      { label: 'MySQL', command: 'tech --info mysql', detail: 'Consultas, datos relacionales y mantenimiento de aplicaciones.' },
+      { label: 'MongoDB', command: 'tech --info mongodb', detail: 'Persistenc-IA documental para los casos que la requieren.' },
+      { label: 'Docker', command: 'tech --info docker', detail: 'Tecnolog-IA conocida dentro del contexto de las aplicaciones, no como foco principal.' },
+      { label: 'Laravel', command: 'tech --info laravel', detail: 'Framework PHP para aplicaciones web y servicios.' },
+      { label: 'TestBox', command: 'tech --info testbox', detail: 'Framework de testing para ColdFusion/Lucee.' },
+      { label: 'Linux', command: 'tech --info linux', detail: 'Entornos y soporte técnico dentro del trabajo diario.' }
     ]
   : [
-      { label: 'ColdFusion', command: 'inspect coldFusion', detail: 'CFML for business logic and web applications.' },
-      { label: 'Lucee', command: 'inspect lucee', detail: 'The CFML runtime I work with in existing applications.' },
-      { label: 'React', command: 'inspect react', detail: 'Composable interfaces and interactive state.' },
-      { label: 'Angular', command: 'inspect angular', detail: 'Structured and maintainable web applications.' },
-      { label: 'Java', command: 'inspect java', detail: 'Development and support across JVM ecosystems.' },
-      { label: 'MySQL', command: 'inspect mysql', detail: 'Queries, relational data and application maintenance.' },
-      { label: 'MongoDB', command: 'inspect mongodb', detail: 'Document persistence for the cases that need it.' },
-      { label: 'Docker', command: 'inspect docker', detail: 'Known in the application context, but not a primary focus.' },
-      { label: 'Laravel', command: 'inspect laravel', detail: 'PHP framework for web applications and services.' },
-      { label: 'TestBox', command: 'inspect testbox', detail: 'Testing framework for ColdFusion/Lucee.' },
-      { label: 'Linux', command: 'inspect linux', detail: 'Environments and technical support in day-to-day work.' }
+      { label: 'ColdFusion', command: 'tech --info coldFusion', detail: 'CFML for business logic and web applications.' },
+      { label: 'Lucee', command: 'tech --info lucee', detail: 'The CFML runtime I work with in existing applications.' },
+      { label: 'React', command: 'tech --info react', detail: 'Composable interfaces and interactive state.' },
+      { label: 'Angular', command: 'tech --info angular', detail: 'Structured and maintainable web applications.' },
+      { label: 'Java', command: 'tech --info java', detail: 'Development and support across JVM ecosystems.' },
+      { label: 'MySQL', command: 'tech --info mysql', detail: 'Queries, relational data and application maintenance.' },
+      { label: 'MongoDB', command: 'tech --info mongodb', detail: 'Document persistence for the cases that need it.' },
+      { label: 'Docker', command: 'tech --info docker', detail: 'Known in the application context, but not a primary focus.' },
+      { label: 'Laravel', command: 'tech --info laravel', detail: 'PHP framework for web applications and services.' },
+      { label: 'TestBox', command: 'tech --info testbox', detail: 'Testing framework for ColdFusion/Lucee.' },
+      { label: 'Linux', command: 'tech --info linux', detail: 'Environments and technical support in day-to-day work.' }
     ];
 ---
 
@@ -121,7 +121,19 @@ const consoleOptions = isSpanish
     <nav class="site-nav" aria-label={isSpanish ? 'Navegación principal' : 'Main navigation'}>
       <a href="#top">{c.nav.home}</a>
       <a href="#projects">{c.nav.projects}</a>
+      <a href="#experience">{c.nav.experience}</a>
       <a href="#about">{c.nav.about}</a>
+      <a
+        class="site-nav__linkedin"
+        href="https://www.linkedin.com/in/juanmadator/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label={isSpanish ? 'Abrir perfil de LinkedIn' : 'Open LinkedIn profile'}
+      >
+        <svg class="site-nav__linkedin-mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V8.999h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.287zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM3.555 20.452h3.558V8.999H3.555v11.453zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.454C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
+        </svg>
+      </a>
       <a class="site-nav__language" href={languageHref}>{editorial.languageLabel}<span>↗</span></a>
     </nav>
   </header>
@@ -129,7 +141,7 @@ const consoleOptions = isSpanish
   <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
   <main id="main-content">
-    <section class="hero-section page-frame" id="top">
+    <section class="hero-section page-frame" id="top" data-section data-section-index="00" data-section-label={isSpanish ? 'Portada' : 'Cover'}>
       <div class="hero-copy" data-reveal>
         <p class="eyebrow"><span class="eyebrow__line"></span><span class="eyebrow__text">{c.hero.kicker}</span></p>
         <h1 class="hero-title">
@@ -174,7 +186,9 @@ const consoleOptions = isSpanish
           items={c.terminalLines}
           label={isSpanish ? 'Instantánea técnica' : 'Live technical snapshot'}
           options={consoleOptions}
-          optionsLabel={isSpanish ? 'Opciones de tecnología' : 'Technology options'}
+          optionsLabel={isSpanish ? 'Opciones de tecnolog-IA' : 'Technology options'}
+          optionsHint={isSpanish ? 'Pulsa una tecnolog-IA para consultar su contexto.' : 'Select a technology to inspect its context.'}
+          statusPrefix={isSpanish ? 'Contexto cargado · ' : 'Context loaded · '}
         />
       </div>
     </section>
@@ -189,13 +203,13 @@ const consoleOptions = isSpanish
       </div>
     </div>
 
-    <section class="page-section page-frame" id="projects">
+    <section class="page-section page-frame" id="projects" data-section data-section-index="01" data-section-label={isSpanish ? 'Trabajo seleccionado' : 'Selected work'}>
       <div class="section-heading" data-reveal>
         <div>
           <p class="section-kicker">{editorial.workKicker}</p>
           <h2>{editorial.workTitle}</h2>
         </div>
-        <p class="section-heading__number">03—{String(c.projects.length).padStart(2, '0')}</p>
+        <p class="section-heading__number">01—{String(c.projects.length).padStart(2, '0')}</p>
       </div>
       <div class="projects-layout">
         <aside class="section-aside" data-reveal>
@@ -209,7 +223,7 @@ const consoleOptions = isSpanish
       </div>
     </section>
 
-    <section class="page-section page-frame experience-section" id="experience">
+    <section class="page-section page-frame experience-section" id="experience" data-section data-section-index="02" data-section-label={isSpanish ? 'Experienc-IA profesional' : 'Professional experience'}>
       <div class="section-heading" data-reveal>
         <div>
           <p class="section-kicker">{editorial.experienceKicker}</p>
@@ -228,7 +242,7 @@ const consoleOptions = isSpanish
       </div>
     </section>
 
-    <section class="page-section page-frame about-section" id="about">
+    <section class="page-section page-frame about-section" id="about" data-section data-section-index="03" data-section-label={isSpanish ? 'La mesa de trabajo' : 'The workbench'}>
       <div class="section-heading" data-reveal>
         <div>
           <p class="section-kicker">{editorial.deskKicker}</p>
@@ -244,7 +258,8 @@ const consoleOptions = isSpanish
             <div><dt>{isSpanish ? 'Nombre' : 'Name'}</dt><dd>{c.profile.fullName}</dd></div>
             <div><dt>{isSpanish ? 'Base' : 'Base'}</dt><dd>{c.profile.location}</dd></div>
             <div><dt>{isSpanish ? 'Formación' : 'Education'}</dt><dd>{c.profile.education}</dd></div>
-            <div><dt>{isSpanish ? 'Situación' : 'Current focus'}</dt><dd>{c.profile.availability}</dd></div>
+            <div><dt>{isSpanish ? 'Situación' : 'Current focus'}</dt><dd>{c.profile.currentStatus}</dd></div>
+            <div><dt>{isSpanish ? 'IA en el trabajo' : 'AI at work'}</dt><dd>{c.profile.aiStatement}</dd></div>
           </dl>
         </article>
         <div class="skills-panel" data-reveal style="--reveal-delay: 120ms">
@@ -257,13 +272,14 @@ const consoleOptions = isSpanish
       </div>
     </section>
 
-    <section class="page-frame contact-section" id="contact">
+    <section class="page-frame contact-section" id="contact" data-section data-section-index="04" data-section-label={isSpanish ? 'Carta abierta' : 'Open letter'}>
       <TerminalCTA
         headline={c.contact.headline}
         text={c.contact.text}
         linkedinLabel={c.contact.linkedinLabel}
         emailLabel={c.contact.emailLabel}
         kicker={editorial.contactKicker}
+        lang={lang}
       />
       <footer class="site-footer">
         <span>JMAT / PORTFOLIO</span>
@@ -275,22 +291,56 @@ const consoleOptions = isSpanish
 </div>
 
 <script>
+  const initializePortfolio = () => {
   const root = document.documentElement;
+  const isSpanish = root.lang === 'es';
   root.classList.add('js');
 
+  let previousScrollY = window.scrollY;
+  let scrollDirection = 'down';
+  root.dataset.scrollDirection = scrollDirection;
+
   const revealItems = document.querySelectorAll('[data-reveal]');
+  const scrollMotionItems = Array.from(revealItems);
   const reveal = (element) => element.classList.add('is-visible');
+
+  const getScrollDepth = (element) => {
+    if (element.classList.contains('hero-visual')) return 1.45;
+    if (element.classList.contains('hero-copy')) return 1.15;
+    if (element.classList.contains('project-card')) return 0.78;
+    if (element.classList.contains('skill-card')) return 0.7;
+    return 0.55;
+  };
+
+  const updateScrollMotion = () => {
+    const viewportHeight = Math.max(window.innerHeight, 1);
+    const viewportCenter = viewportHeight * 0.5;
+
+    scrollMotionItems.forEach((item) => {
+      if (!(item instanceof HTMLElement)) return;
+      const bounds = item.getBoundingClientRect();
+      const itemCenter = bounds.top + bounds.height * 0.5;
+      const relativePosition = (itemCenter - viewportCenter) / viewportHeight;
+      const shift = Math.max(-16, Math.min(16, -relativePosition * getScrollDepth(item) * 20));
+      item.style.setProperty('--scroll-shift', `${shift.toFixed(2)}px`);
+    });
+  };
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
-      (entries, currentObserver) => {
+      (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          reveal(entry.target);
-          currentObserver.unobserve(entry.target);
+          if (!(entry.target instanceof HTMLElement)) return;
+
+          if (entry.isIntersecting) {
+            entry.target.dataset.revealDirection = scrollDirection;
+            reveal(entry.target);
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
         });
       },
-      { rootMargin: '0px 0px -10% 0px', threshold: 0.08 },
+      { rootMargin: '-8% 0px -12% 0px', threshold: 0.08 },
     );
 
     revealItems.forEach((item) => observer.observe(item));
@@ -300,17 +350,108 @@ const consoleOptions = isSpanish
 
   const header = document.querySelector('[data-header]');
   const progress = document.querySelector('[data-scroll-progress]');
+  const sectionTargets = Array.from(document.querySelectorAll('[data-section]'));
+  let activeSection = null;
+  let sectionTransitionTimer = 0;
+
+  const triggerSectionTransition = (section, direction) => {
+    if (!(section instanceof HTMLElement)) return;
+
+    sectionTargets.forEach((candidate) => {
+      if (candidate !== section) candidate.classList.remove('is-page-entering');
+    });
+
+    section.dataset.pageDirection = direction;
+    section.classList.remove('is-page-entering');
+    void section.offsetWidth;
+    section.classList.add('is-page-entering');
+    window.clearTimeout(sectionTransitionTimer);
+    sectionTransitionTimer = window.setTimeout(() => section.classList.remove('is-page-entering'), 1500);
+  };
+
+  const updateActiveSection = (currentScrollY) => {
+    if (!sectionTargets.length) return;
+
+    const activationLine = currentScrollY + window.innerHeight * 0.38;
+    let nextSection = sectionTargets[0];
+    sectionTargets.forEach((section) => {
+      const top = section.getBoundingClientRect().top + currentScrollY;
+      if (top <= activationLine) nextSection = section;
+    });
+
+    if (nextSection === activeSection) return;
+    const previousSection = activeSection;
+    activeSection = nextSection;
+    if (!previousSection) return;
+
+    const previousTop = previousSection.getBoundingClientRect().top + currentScrollY;
+    const nextTop = nextSection.getBoundingClientRect().top + currentScrollY;
+    triggerSectionTransition(nextSection, nextTop >= previousTop ? 'down' : 'up');
+  };
 
   const updateScrollState = () => {
+    const currentScrollY = window.scrollY;
     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
-    if (header) header.classList.toggle('is-scrolled', window.scrollY > 20);
+    const ratio = scrollable > 0 ? currentScrollY / scrollable : 0;
+
+    if (currentScrollY > previousScrollY + 1) scrollDirection = 'down';
+    if (currentScrollY < previousScrollY - 1) scrollDirection = 'up';
+    root.dataset.scrollDirection = scrollDirection;
+
+    if (header instanceof HTMLElement) {
+      const hasScrolled = currentScrollY > 20;
+      header.classList.toggle('is-scrolled', hasScrolled);
+      header.classList.toggle('is-scrolling-down', hasScrolled && currentScrollY > 90 && scrollDirection === 'down');
+      header.classList.toggle('is-scrolling-up', hasScrolled && scrollDirection === 'up');
+    }
+    root.classList.toggle('is-scroll-down', scrollDirection === 'down');
+    root.classList.toggle('is-scroll-up', scrollDirection === 'up');
     if (progress) progress.style.transform = `scaleX(${Math.min(1, Math.max(0, ratio))})`;
+    updateScrollMotion();
+    updateActiveSection(currentScrollY);
+    previousScrollY = currentScrollY;
   };
 
   updateScrollState();
   window.addEventListener('scroll', updateScrollState, { passive: true });
   window.addEventListener('resize', updateScrollState, { passive: true });
+
+  let scrollFrame = 0;
+  const cancelScrollAnimation = () => {
+    if (!scrollFrame) return;
+    cancelAnimationFrame(scrollFrame);
+    scrollFrame = 0;
+  };
+
+  const animateScrollTo = (target) => {
+    cancelScrollAnimation();
+    const headerHeight = header instanceof HTMLElement ? header.getBoundingClientRect().height : 0;
+    const destination = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerHeight - 14);
+    const start = window.scrollY;
+    const distance = destination - start;
+    if (Math.abs(distance) < 2) return;
+
+    const duration = Math.min(1100, Math.max(650, Math.abs(distance) * 0.55));
+    const startedAt = performance.now();
+    const easeInOut = (progress) => progress < 0.5
+      ? 4 * progress * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+    const step = (now) => {
+      const progress = Math.min(1, (now - startedAt) / duration);
+      window.scrollTo(0, start + distance * easeInOut(progress));
+      if (progress < 1) {
+        scrollFrame = requestAnimationFrame(step);
+      } else {
+        scrollFrame = 0;
+      }
+    };
+
+    scrollFrame = requestAnimationFrame(step);
+  };
+
+  window.addEventListener('wheel', cancelScrollAnimation, { passive: true });
+  window.addEventListener('touchstart', cancelScrollAnimation, { passive: true });
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (event) => {
@@ -320,10 +461,7 @@ const consoleOptions = isSpanish
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({
-        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-        block: 'start'
-      });
+      animateScrollTo(target);
       history.replaceState(null, '', targetId);
     });
   });
@@ -339,12 +477,14 @@ const consoleOptions = isSpanish
 
       const command = panel.querySelector('[data-console-value="0"]');
       const detail = panel.querySelector('[data-console-value="1"]');
+      const status = panel.querySelector('[data-console-status]');
       if (command) command.textContent = option.dataset.command ?? '';
       if (detail) detail.textContent = option.dataset.detail ?? '';
+      if (status) status.textContent = `${panel.dataset.statusPrefix ?? ''}${option.dataset.label ?? ''}`;
     });
   });
 
-  document.querySelectorAll('.project-card').forEach((card) => {
+  document.querySelectorAll('.project-card, .skill-card').forEach((card) => {
     card.addEventListener('pointermove', (event) => {
       const bounds = card.getBoundingClientRect();
       card.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
@@ -355,4 +495,11 @@ const consoleOptions = isSpanish
       card.style.removeProperty('--pointer-y');
     });
   });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializePortfolio, { once: true });
+  } else {
+    initializePortfolio();
+  }
 </script>

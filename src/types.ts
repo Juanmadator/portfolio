@@ -26,13 +26,14 @@ export interface Profile {
   location: string;
   education: string;
   role: string;
-  availability: string;
+  currentStatus: string;
+  aiStatement: string;
 }
 
 export interface LocalizedContent {
   seoTitle: string;
   seoDescription: string;
-  nav: { home: string; projects: string; about: string; switchLabel: string };
+  nav: { home: string; projects: string; experience: string; about: string; switchLabel: string };
   hero: {
     kicker: string;
     headline: string;

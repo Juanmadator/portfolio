@@ -5,8 +5,10 @@ interface Props {
   linkedinLabel: string;
   emailLabel: string;
   kicker?: string;
+  lang?: 'es' | 'en';
 }
-const { headline, text, linkedinLabel, emailLabel, kicker = '04 / OPEN LETTER' } = Astro.props as Props;
+const { headline, text, linkedinLabel, emailLabel, kicker = '04 / OPEN LETTER', lang = 'es' } = Astro.props as Props;
+const isSpanish = lang === 'es';
 ---
 <section class="contact-card" data-reveal>
   <div class="contact-card__noise" aria-hidden="true"></div>
@@ -18,6 +20,73 @@ const { headline, text, linkedinLabel, emailLabel, kicker = '04 / OPEN LETTER' }
       <a class="button button--paper" href="https://www.linkedin.com/in/juanmadator/" target="_blank" rel="noreferrer">{linkedinLabel}<span>↗</span></a>
       <a class="button button--outline-light" href="mailto:juanmadametor@gmail.com">{emailLabel}<span>↗</span></a>
     </div>
+    <form class="contact-form" data-contact-form data-locale={lang}>
+      <div class="contact-form__grid">
+        <label class="contact-form__field">
+          <span>{isSpanish ? 'Tu email' : 'Your email'}</span>
+          <input type="email" name="email" autocomplete="email" maxlength="180" required placeholder="nombre@dominio.com" />
+        </label>
+        <label class="contact-form__field">
+          <span>{isSpanish ? 'Asunto' : 'Subject'}</span>
+          <input type="text" name="subject" maxlength="180" required placeholder={isSpanish ? '¿En qué podemos hablar?' : 'What shall we talk about?'} />
+        </label>
+      </div>
+      <label class="contact-form__field">
+        <span>{isSpanish ? 'Mensaje' : 'Message'}</span>
+        <textarea name="message" maxlength="6000" required placeholder={isSpanish ? 'Escribe aquí tu mensaje.' : 'Write your message here.'}></textarea>
+      </label>
+      <label class="contact-form__honeypot" aria-hidden="true">
+        <span>Website</span>
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </label>
+      <div class="contact-form__actions">
+        <button class="button button--paper" type="submit">{isSpanish ? 'Enviar mensaje' : 'Send message'}<span>↗</span></button>
+        <p class="contact-form__status" data-contact-status role="status" aria-live="polite"></p>
+      </div>
+    </form>
   </div>
   <span class="contact-card__word" aria-hidden="true">HELLO</span>
 </section>
+
+<script>
+  const contactForm = document.querySelector('[data-contact-form]');
+
+  if (contactForm instanceof HTMLFormElement) {
+    const contactIsSpanish = contactForm.dataset.locale === 'es';
+    const contactStatus = contactForm.querySelector('[data-contact-status]');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (contactStatus) {
+        contactStatus.dataset.state = '';
+        contactStatus.textContent = contactIsSpanish ? 'Enviando…' : 'Sending…';
+      }
+      if (submitButton instanceof HTMLButtonElement) submitButton.disabled = true;
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || !result.ok) {
+          throw new Error(result.error || (contactIsSpanish ? 'No se ha podido enviar el mensaje.' : 'The message could not be sent.'));
+        }
+        contactForm.reset();
+        if (contactStatus) {
+          contactStatus.dataset.state = 'success';
+          contactStatus.textContent = contactIsSpanish ? 'Mensaje enviado. Gracias.' : 'Message sent. Thank you.';
+        }
+      } catch (error) {
+        if (contactStatus) {
+          contactStatus.dataset.state = 'error';
+          contactStatus.textContent = error instanceof Error ? error.message : (contactIsSpanish ? 'No se ha podido enviar el mensaje.' : 'The message could not be sent.');
+        }
+      } finally {
+        if (submitButton instanceof HTMLButtonElement) submitButton.disabled = false;
+      }
+    });
+  }
+</script>
