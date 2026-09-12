@@ -1,0 +1,21 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import { content } from '../../../data/content';
+const c = content.en;
+---
+<Layout title={`Projects | ${c.seoTitle}`} description={c.seoDescription} lang="en" altLangUrl="/es/projects/">
+  <main>
+    <nav class="top-nav">
+      <div class="brand">JMAT / PROJECTS</div>
+      <div class="nav-links">
+        <a href="/en/">{c.nav.home}</a>
+        <a class="lang-switch" href="/es/projects/">{c.nav.switchLabel}</a>
+      </div>
+    </nav>
+    <h1 class="section-title">{c.sections.projects}</h1>
+    <section class="project-grid">
+      {c.projects.map((project) => <ProjectCard project={project} />)}
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,49 @@
+---
+interface ConsoleOption {
+  label: string;
+  command: string;
+  detail: string;
+}
+
+const {
+  items,
+  label = 'Live technical snapshot',
+  options = [],
+  optionsLabel = 'Technology options'
+}: {
+  items: string[];
+  label?: string;
+  options?: ConsoleOption[];
+  optionsLabel?: string;
+} = Astro.props;
+---
+<div class="terminal-panel" aria-label={label} data-terminal-panel data-reveal style="--reveal-delay: 280ms">
+  <div class="terminal-panel__head">
+    <span class="terminal-panel__dots"><i></i><i></i><i></i></span>
+    <span>FIELD NOTES / LIVE</span>
+  </div>
+  <div class="terminal-panel__lines">
+    {items.map((line, index) => (
+      <p>
+        <span class="terminal-panel__prompt">›</span>
+        <span data-console-value={index} aria-live={index === 1 ? 'polite' : undefined}>{line.replace(/^\$\s*/, '')}</span>
+      </p>
+    ))}
+  </div>
+  {options.length > 0 ? (
+    <div class="terminal-panel__options" role="group" aria-label={optionsLabel}>
+      {options.map((option, index) => (
+        <button
+          type="button"
+          class="terminal-panel__option"
+          data-console-option
+          data-command={option.command}
+          data-detail={option.detail}
+          aria-pressed={index === 0 ? 'true' : 'false'}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  ) : null}
+</div>

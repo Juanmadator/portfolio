@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PortfolioPage from '../../components/PortfolioPage.astro';
+import { content } from '../../data/content';
+
+const c = content.en;
+---
+<Layout title={c.seoTitle} description={c.seoDescription} lang="en" altLangUrl="/es/">
+  <PortfolioPage content={c} lang="en" />
+</Layout>

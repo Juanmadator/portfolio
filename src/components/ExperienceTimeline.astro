@@ -1,0 +1,17 @@
+---
+import type { ExperienceItem } from '../types';
+const { items } = Astro.props as { items: ExperienceItem[] };
+---
+<div class="experience-list">
+  {items.map((item, index) => (
+    <article class="experience-item" data-reveal style={`--reveal-delay: ${index * 100}ms`}>
+      <div class="experience-item__index">0{index + 1}</div>
+      <div class="experience-item__content">
+        <span>{item.period}</span>
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </div>
+      <span class="experience-item__arrow" aria-hidden="true">↗</span>
+    </article>
+  ))}
+</div>

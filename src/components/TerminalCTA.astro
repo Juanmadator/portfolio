@@ -1,0 +1,23 @@
+---
+interface Props {
+  headline: string;
+  text: string;
+  linkedinLabel: string;
+  emailLabel: string;
+  kicker?: string;
+}
+const { headline, text, linkedinLabel, emailLabel, kicker = '04 / OPEN LETTER' } = Astro.props as Props;
+---
+<section class="contact-card" data-reveal>
+  <div class="contact-card__noise" aria-hidden="true"></div>
+  <div class="contact-card__content">
+    <p class="section-kicker section-kicker--light">{kicker}</p>
+    <h2>{headline}</h2>
+    <p>{text}</p>
+    <div class="cta-row">
+      <a class="button button--paper" href="https://www.linkedin.com/in/juanmadator/" target="_blank" rel="noreferrer">{linkedinLabel}<span>↗</span></a>
+      <a class="button button--outline-light" href="mailto:juanmadametor@gmail.com">{emailLabel}<span>↗</span></a>
+    </div>
+  </div>
+  <span class="contact-card__word" aria-hidden="true">HELLO</span>
+</section>

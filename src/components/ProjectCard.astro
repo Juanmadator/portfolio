@@ -1,0 +1,32 @@
+---
+import type { ProjectItem } from '../types';
+const { project, index = 0, outcomeLabel = 'Outcome' } = Astro.props as { project: ProjectItem; index?: number; outcomeLabel?: string };
+const visualWords = ['RELIABLE', 'RUNTIME', 'BRIDGE'];
+const visualWord = visualWords[index] ?? 'WORK';
+const primaryLink = project.links[0] ?? { label: 'Read more', href: '#contact' };
+---
+<article class:list={['project-card', `project-card--${index + 1}`]} data-reveal style={`--reveal-delay: ${index * 90}ms`}>
+  <div class="project-card__visual" aria-hidden="true">
+    <span class="project-card__number">0{index + 1}</span>
+    <span class="project-card__visual-word">{visualWord}</span>
+    <span class="project-card__visual-mark">↗</span>
+    <span class="project-card__visual-line"></span>
+  </div>
+  <div class="project-card__body">
+    <div class="project-card__meta">
+      <span>{project.stack[0]}</span>
+      <span>{project.role}</span>
+    </div>
+    <h3>{project.title}</h3>
+    <p class="project-card__summary">{project.summary}</p>
+    <p class="project-card__outcome"><strong>{outcomeLabel}</strong> {project.outcome}</p>
+    <div class="project-card__footer">
+      <ul class="tag-list">
+        {project.stack.map((item) => <li>{item}</li>)}
+      </ul>
+      <a class="project-card__link" href={primaryLink.href} aria-label={`${primaryLink.label}: ${project.title}`}>
+        <span>{primaryLink.label}</span><b>↗</b>
+      </a>
+    </div>
+  </div>
+</article>

@@ -1,46 +1,30 @@
-# Astro Starter Kit: Basics
+# JMAT Portfolio
+
+SPA estática de portafolio personal construida con Astro. La portada está organizada como una edición editorial: papel texturizado, tipografía redondeada para lectura, display serif con carácter, titulares de prensa, reglas, sellos, ticker y una paleta tinta / rojo / ocre.
+
+## Incluye
+
+- Portada en español y traducción inglesa (`/es/` y `/en/`).
+- Navegación por anclas: trabajo, trayectoria, perfil y contacto.
+- Reveal on-scroll con `IntersectionObserver`, barra de progreso y scroll suave entre secciones.
+- Hover con elevación, sombra editorial, rotación sutil y spotlight de puntero en proyectos, sin alterar padding ni dimensiones.
+- Carrusel continuo de tecnologías y consola visual interactiva para consultar contexto de cada una.
+- Respeto de `prefers-reduced-motion`.
+- Layout responsive comprobado a escritorio y 390×844.
+- Fuentes Google Fonts: Manrope, Fraunces y DM Mono.
+
+## Desarrollo
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Validación
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```sh
+npx tsc --noEmit
+npm run build
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+LinkedIn apunta a [juanmadator](https://www.linkedin.com/in/juanmadator/) y el CTA de email abre `juanmadametor@gmail.com` mediante `mailto:`. Para enviar desde un formulario real habrá que conectar más adelante una cuenta y un proveedor de correo.

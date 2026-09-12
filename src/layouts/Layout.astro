@@ -1,23 +1,54 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
+interface Props {
+  title: string;
+  description: string;
+  lang: 'es' | 'en';
+  altLangUrl: string;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title, description, lang, altLangUrl } = Astro.props;
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Juan Manuel Adame Torronteras',
+  jobTitle: lang === 'es' ? 'Desarrollador de Software Full Stack' : 'Full-stack Software Developer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'ESG Innova Group'
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Cordoba',
+    addressCountry: 'ES'
+  },
+  alumniOf: 'IES Trassierra',
+  sameAs: ['https://www.linkedin.com/in/juanmadator/'],
+  knowsAbout: ['CFML', 'ColdFusion', 'Lucee', 'React', 'Angular', 'Java', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'MongoDB', 'TestBox', 'Linux', 'Docker', 'Podman']
+};
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#efe7d7" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'} />
+    <link rel="alternate" hreflang={lang === 'es' ? 'en' : 'es'} href={altLangUrl} />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
