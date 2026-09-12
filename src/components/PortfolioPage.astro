@@ -234,9 +234,10 @@ const consoleOptions = isSpanish
       </div>
       <div class="experience-layout">
         <aside class="quote-card" data-reveal>
-          <span class="quote-card__mark">“</span>
+          <span class="quote-card__mark" aria-hidden="true">“</span>
           <p class="quote-card__label">{isSpanish ? 'NOTA DEL EDITOR' : 'EDITORIAL NOTE'}</p>
           <blockquote>{editorial.quote}</blockquote>
+          <div class="quote-card__principles"><span>{isSpanish ? 'Criterio' : 'Judgement'}</span><i>✳</i><span>{isSpanish ? 'Claridad' : 'Clarity'}</span><i>✳</i><span>{isSpanish ? 'Cuidado' : 'Care'}</span></div>
           <cite>{editorial.quoteByline}</cite>
         </aside>
         <ExperienceTimeline items={c.experience} />

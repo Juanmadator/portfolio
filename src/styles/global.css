@@ -1355,14 +1355,43 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
 
 .quote-card {
   position: relative;
-  min-height: 22rem;
+  min-height: 0;
+  align-self: start;
   overflow: hidden;
-  padding: 1.55rem;
+  padding: clamp(1.4rem, 2.5vw, 2rem);
   color: var(--paper-light);
   background: var(--red);
   box-shadow: 0.55rem 0.55rem 0 var(--ink);
   transform: rotate(-1deg);
+  border: 1px solid var(--red-deep);
+  transition: background 520ms var(--ease), box-shadow 520ms var(--ease);
 }
+
+.quote-card::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  opacity: 0.22;
+  background-image: radial-gradient(var(--paper-light) 0.6px, transparent 0.9px), repeating-linear-gradient(0deg, transparent 0 31px, rgba(247,240,226,0.15) 31px 32px);
+  background-size: 5px 5px, 100% 100%;
+}
+.quote-card:hover { background: var(--ink); box-shadow: 0.55rem 0.55rem 0 var(--red); }
+.quote-card__principles {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.8rem;
+  padding-block: 0.8rem;
+  border-block: 1px solid rgba(247,240,226,0.3);
+  font: 0.6rem var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.quote-card__principles i { font-style: normal; opacity: 0.6; }
 
 .quote-card::after {
   position: absolute;
@@ -1376,7 +1405,13 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
 }
 
 .quote-card__mark {
-  display: none;
+  position: relative;
+  display: block;
+  height: 3.8rem;
+  font-family: var(--display);
+  font-size: 6rem;
+  line-height: 1;
+  opacity: 0.7;
 }
 
 .quote-card__label {
@@ -1393,19 +1428,21 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
   position: relative;
   z-index: 1;
   max-width: 17ch;
-  margin: 3rem 0 0;
+  margin: 1.3rem 0 0;
   font-family: var(--display);
-  font-size: clamp(1.8rem, 3vw, 3.1rem);
+  font-size: clamp(1.7rem, 2.3vw, 2.4rem);
   font-weight: 600;
   letter-spacing: -0.065em;
-  line-height: 0.98;
+  line-height: 1.08;
 }
 
 .quote-card cite {
-  position: absolute;
+  position: relative;
+  display: block;
+  margin-top: 1rem;
   z-index: 1;
-  bottom: 1.55rem;
-  left: 1.55rem;
+  bottom: auto;
+  left: auto;
   color: rgba(247, 240, 226, 0.72);
   font-family: var(--mono);
   font-size: 0.62rem;
@@ -1419,19 +1456,50 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
 }
 
 .experience-item {
+  position: relative;
+  overflow: hidden;
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr) 2rem;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
   gap: 1.2rem;
   align-items: start;
-  padding: 1.35rem 0 1.5rem;
-  border-bottom: 1px solid var(--rule);
-  transition: transform 360ms var(--ease), background 360ms var(--ease);
+  padding: 1.4rem;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-light);
+  box-shadow: 0.3rem 0.3rem 0 var(--paper-shadow);
+  transition: color 520ms var(--ease), transform 520ms var(--ease), background 520ms var(--ease), box-shadow 520ms var(--ease);
 }
 
 .experience-item:hover {
-  background: rgba(255, 250, 240, 0.43);
-  transform: translateX(5px);
+  background: var(--ink);
+  color: var(--paper-light);
+  box-shadow: 0.4rem 0.4rem 0 var(--red);
 }
+
+.experience-item::before {
+  position: absolute;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background: radial-gradient(var(--red) 0.6px, transparent 0.9px);
+  background-size: 6px 6px;
+  opacity: 0.1;
+}
+.experience-item > * { position: relative; }
+.experience-item--current { border-top: 3px solid var(--red); }
+.experience-item__index { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; align-self: stretch; }
+.experience-item__index > span { font-family: var(--display); font-size: 2.6rem; line-height: 1; }
+.experience-item__index b { font-size: 1.1rem; font-weight: 400; }
+.experience-item__index i { width: 1px; flex: 1; min-height: 2rem; background: var(--rule); }
+.experience-item .experience-item__company { color: var(--red-deep); font-weight: 600; margin-top: 0.45rem; }
+.experience-item__details { padding: 0; margin: 1rem 0; list-style: none; color: var(--ink-soft); font-size: 0.79rem; line-height: 1.6; }
+.experience-item__details li { position: relative; padding-left: 1rem; margin-block: 0.5rem; }
+.experience-item__details li::before { position: absolute; left: 0; top: 0.65em; width: 4px; height: 4px; background: var(--red); content: ''; }
+.experience-item__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); }
+.experience-item__tags span { padding: 0.3rem 0.5rem; border: 1px solid var(--rule); font-family: var(--mono); font-size: 0.6rem; }
+.experience-item__details, .experience-item__tags, .experience-item .experience-item__company, .experience-item__index, .experience-item__content > span { transition: color 520ms var(--ease); }
+.experience-item:hover .experience-item__details, .experience-item:hover .experience-item__content > span { color: #d9d1c1; }
+.experience-item:hover .experience-item__company, .experience-item:hover .experience-item__index { color: #e5a08e; }
 
 .experience-item__index,
 .experience-item__content > span {
@@ -1751,9 +1819,11 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
 
 .contact-card {
   position: relative;
-  min-height: 28rem;
+  min-height: 0;
+  max-width: 64rem;
+  margin-inline: auto;
   overflow: hidden;
-  padding: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1.4rem, 3vw, 2.4rem);
   color: var(--paper-light);
   background: var(--ink);
   box-shadow: 0.8rem 0.8rem 0 var(--red);
@@ -1792,18 +1862,18 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
 }
 
 .contact-card h2 {
-  max-width: 10ch;
-  margin: 1.5rem 0 0;
+  max-width: 20ch;
+  margin: 0.8rem 0 0;
   color: var(--paper-light);
   font-family: var(--display);
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
   letter-spacing: -0.09em;
-  line-height: 0.84;
+  line-height: 0.98;
 }
 
 .contact-card__content > p:not(.section-kicker) {
   max-width: 31rem;
-  margin: 1.5rem 0 0;
+  margin: 0.85rem 0 0;
   color: rgba(247, 240, 226, 0.7);
   font-size: 0.92rem;
   line-height: 1.7;
@@ -1813,13 +1883,13 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  margin-top: 1.8rem;
+  margin-top: 1rem;
 }
 
 .contact-form {
   max-width: 47rem;
-  margin-top: 2rem;
-  padding-top: 1.25rem;
+  margin-top: 1.2rem;
+  padding-top: 0.85rem;
   border-top: 1px solid rgba(247, 240, 226, 0.22);
 }
 
@@ -1867,7 +1937,7 @@ html.js [data-section][data-page-direction='up'].is-page-entering [data-reveal] 
 }
 
 .contact-form textarea {
-  min-height: 7.5rem;
+  min-height: 6rem;
   resize: vertical;
 }
 
@@ -2266,12 +2336,12 @@ html.js .skill-card.is-visible:hover {
   }
 
   .contact-card {
-    min-height: 30rem;
+    min-height: 0;
     padding: 1.45rem;
   }
 
   .contact-card h2 {
-    font-size: clamp(3.15rem, 15vw, 5.7rem);
+    font-size: clamp(2.2rem, 9vw, 3rem);
   }
 
   .contact-card .button {

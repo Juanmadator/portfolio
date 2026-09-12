@@ -4,14 +4,19 @@ const { items } = Astro.props as { items: ExperienceItem[] };
 ---
 <div class="experience-list">
   {items.map((item, index) => (
-    <article class="experience-item" data-reveal style={`--reveal-delay: ${index * 100}ms`}>
-      <div class="experience-item__index">0{index + 1}</div>
+    <article class:list={['experience-item', { 'experience-item--current': index === 0 }]} data-reveal style={`--reveal-delay: ${index * 100}ms`}>
+      <div class="experience-item__index" aria-hidden="true"><span>0{index + 1}</span><b>{index === 0 ? '{ }' : '</>'}</b><i></i></div>
       <div class="experience-item__content">
         <span>{item.period}</span>
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
+        <h3>{item.title.split(' · ')[0]}</h3>
+        <p class="experience-item__company">{item.title.split(' · ').slice(1).join(' · ')}</p>
+        <ul class="experience-item__details">
+          {item.description.split(/\.\s+/).filter(Boolean).map((detail) => <li>{detail.replace(/\.$/, '')}</li>)}
+        </ul>
+        <div class="experience-item__tags" aria-label="Stack">
+          {(index === 0 ? ['CFML / Lucee', 'jQuery', 'SQL', 'TestBox'] : ['Spring Boot', 'Maven', 'Swagger', 'Liquibase']).map(tech => <span>{tech}</span>)}
+        </div>
       </div>
-      <span class="experience-item__arrow" aria-hidden="true">↗</span>
     </article>
   ))}
 </div>
