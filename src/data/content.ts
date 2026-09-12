@@ -3,27 +3,27 @@ import type { Lang, LocalizedContent } from '../types';
 const baseProjects = {
   es: [
     {
-      title: 'Aplicaciones de negocio · CFML / Lucee',
-      summary: 'Desarrollo de funcionalidades y mantenimiento sobre aplicaciones internas y de clientes en ESG Innova Group / Isotools, utilizando jQuery, CFML y SQL.',
+      title: 'Software de negocio',
+      summary: 'Nuevas funciones y mantenimiento con CFML, jQuery y SQL en aplicaciones de ESG Innova Group / Isotools.',
       stack: ['CFML', 'Lucee', 'jQuery', 'SQL'],
       role: 'ESG Innova Group · Actualidad',
-      outcome: 'Tickets resueltos, datos gestionados y mejoras entregadas dentro de un producto activo.',
+      outcome: 'Mejoras de producto, resolución de tickets y gestión de datos.',
       links: [{ label: 'Pedir contexto', href: '#contact' }]
     },
     {
-      title: 'APIs backend con Spring Boot',
-      summary: 'Prácticas en Coderit S.R.L. (Milán) desarrollando APIs y trabajando con Maven, Logback, Swagger y cambios de base de datos.',
+      title: 'APIs con Spring Boot',
+      summary: 'Prácticas en Milán: desarrollo de APIs, documentación con Swagger y cambios de datos con Liquibase.',
       stack: ['Java', 'Spring Boot', 'Maven', 'Liquibase'],
       role: 'Coderit S.R.L. · 2024',
-      outcome: 'Experienc-IA en APIs, rendimiento, buenas prácticas y ciclo de cambios de base de datos.',
+      outcome: 'Experienc-IA práctica en backend, SOLID y control de versiones de datos.',
       links: [{ label: 'Pedir contexto', href: '#contact' }]
     },
     {
-      title: 'Soporte técnico y evolución web',
-      summary: 'Resolución de tickets y cambios de código conectando d-IA-gnóstico funcional, front-end y back-end.',
+      title: 'Calidad y evolución web',
+      summary: 'D-IA-gnóstico de incidenc-IA-s y cambios de código conectando front-end, backend y datos.',
       stack: ['TestBox', 'MySQL', 'Linux', 'Helpdesk'],
       role: 'Soporte · desarrollo',
-      outcome: 'Incidenc-IA-s acompañadas de contexto técnico y pruebas para mantener la calidad.',
+      outcome: 'Correcciones con contexto técnico y pruebas automáticas con TestBox.',
       links: [{ label: 'Pedir contexto', href: '#contact' }]
     }
   ],
