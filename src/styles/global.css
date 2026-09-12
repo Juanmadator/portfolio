@@ -1875,26 +1875,10 @@ html.js .skill-card.is-visible:hover {
     transform: perspective(1100px) translate3d(0, 4rem, -30px) rotateX(-18deg) rotateZ(-0.6deg) scale(0.98);
   }
 
-  32% {
-    opacity: 1;
-    filter: brightness(0.96);
-    transform: perspective(1100px) translate3d(0, 1.4rem, -10px) rotateX(-7deg) rotateZ(-0.2deg) scale(0.995);
-  }
-
-  36% {
-    opacity: 1;
-  }
-
-  72% {
-    opacity: 1;
-    filter: blur(0);
-    transform: perspective(1100px) translate3d(0, -0.15rem, 0) rotateX(0.4deg) scale(1);
-  }
-
   100% {
     opacity: 1;
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) rotateX(0);
+    filter: brightness(1);
+    transform: perspective(1100px) translate3d(0, var(--scroll-shift, 0px), 0) rotateX(0) rotateZ(0) scale(1);
   }
 }
 
@@ -1905,26 +1889,10 @@ html.js .skill-card.is-visible:hover {
     transform: perspective(1100px) translate3d(0, -4rem, -30px) rotateX(18deg) rotateZ(0.6deg) scale(0.98);
   }
 
-  32% {
-    opacity: 1;
-    filter: brightness(0.96);
-    transform: perspective(1100px) translate3d(0, -1.4rem, -10px) rotateX(7deg) rotateZ(0.2deg) scale(0.995);
-  }
-
-  36% {
-    opacity: 1;
-  }
-
-  72% {
-    opacity: 1;
-    filter: blur(0);
-    transform: perspective(1100px) translate3d(0, 0.15rem, 0) rotateX(-0.4deg) scale(1);
-  }
-
   100% {
     opacity: 1;
-    filter: blur(0);
-    transform: translate3d(0, 0, 0) rotateX(0);
+    filter: brightness(1);
+    transform: perspective(1100px) translate3d(0, var(--scroll-shift, 0px), 0) rotateX(0) rotateZ(0) scale(1);
   }
 }
 
