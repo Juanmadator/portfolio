@@ -347,7 +347,7 @@ button:focus-visible {
 }
 
 html.js[data-motion='full'] [data-section].is-page-entering [data-reveal] {
-  animation: section-page-content-down 2400ms cubic-bezier(0.32, 0.12, 0.24, 1) both !important;
+  animation: section-page-content-down 1100ms cubic-bezier(0.22, 0.5, 0.3, 1) both !important;
   animation-delay: calc(var(--reveal-delay, 0ms) + 90ms) !important;
 }
 
@@ -388,7 +388,7 @@ html.js [data-section][data-page-direction='up'].is-page-entering::before {
 }
 
 html.js [data-section].is-page-entering [data-reveal] {
-  animation: section-page-content-down 2400ms cubic-bezier(0.32, 0.12, 0.24, 1) both;
+  animation: section-page-content-down 1100ms cubic-bezier(0.22, 0.5, 0.3, 1) both;
   animation-delay: calc(var(--reveal-delay, 0ms) + 90ms);
   backface-visibility: hidden;
   transform-origin: 50% 0%;
@@ -1871,14 +1871,14 @@ html.js .skill-card.is-visible:hover {
 @keyframes section-page-content-down {
   0% {
     opacity: 0.65;
-    filter: brightness(0.55);
-    transform: perspective(1000px) translate3d(0, 13rem, -120px) rotateX(-58deg) rotateZ(-4deg) scale(0.88);
+    filter: brightness(0.88);
+    transform: perspective(1100px) translate3d(0, 4rem, -30px) rotateX(-18deg) rotateZ(-0.6deg) scale(0.98);
   }
 
   32% {
     opacity: 1;
-    filter: brightness(0.72);
-    transform: perspective(1000px) translate3d(0, 5rem, -40px) rotateX(-28deg) rotateZ(-1.5deg) scale(0.96);
+    filter: brightness(0.96);
+    transform: perspective(1100px) translate3d(0, 1.4rem, -10px) rotateX(-7deg) rotateZ(-0.2deg) scale(0.995);
   }
 
   36% {
@@ -1888,7 +1888,7 @@ html.js .skill-card.is-visible:hover {
   72% {
     opacity: 1;
     filter: blur(0);
-    transform: perspective(1100px) translate3d(0, -0.65rem, 0) rotateX(2deg) rotateZ(0.3deg) scale(1);
+    transform: perspective(1100px) translate3d(0, -0.15rem, 0) rotateX(0.4deg) scale(1);
   }
 
   100% {
@@ -1901,14 +1901,14 @@ html.js .skill-card.is-visible:hover {
 @keyframes section-page-content-up {
   0% {
     opacity: 0.65;
-    filter: brightness(0.55);
-    transform: perspective(1000px) translate3d(0, -13rem, -120px) rotateX(58deg) rotateZ(4deg) scale(0.88);
+    filter: brightness(0.88);
+    transform: perspective(1100px) translate3d(0, -4rem, -30px) rotateX(18deg) rotateZ(0.6deg) scale(0.98);
   }
 
   32% {
     opacity: 1;
-    filter: brightness(0.72);
-    transform: perspective(1000px) translate3d(0, -5rem, -40px) rotateX(28deg) rotateZ(1.5deg) scale(0.96);
+    filter: brightness(0.96);
+    transform: perspective(1100px) translate3d(0, -1.4rem, -10px) rotateX(7deg) rotateZ(0.2deg) scale(0.995);
   }
 
   36% {
@@ -1918,7 +1918,7 @@ html.js .skill-card.is-visible:hover {
   72% {
     opacity: 1;
     filter: blur(0);
-    transform: perspective(1100px) translate3d(0, 0.65rem, 0) rotateX(-2deg) rotateZ(-0.3deg) scale(1);
+    transform: perspective(1100px) translate3d(0, 0.15rem, 0) rotateX(-0.4deg) scale(1);
   }
 
   100% {
