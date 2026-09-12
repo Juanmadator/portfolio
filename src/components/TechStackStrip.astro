@@ -1,14 +1,25 @@
 ---
 import type { SkillGroup } from '../types';
 const { groups } = Astro.props as { groups: SkillGroup[] };
+const editions = ['SYNTAX', 'INTERFACE', 'DATA / QA', 'WORKSPACE'];
+const symbols = ['{ }', '</>', 'SQL', '>_'];
 ---
 <div class="skill-grid">
   {groups.map((group, index) => (
-    <section class="skill-card" data-reveal style={`--reveal-delay: ${index * 90}ms`}>
-      <div class="skill-card__head"><span>0{index + 1}</span><span>FIELD</span></div>
+    <section class:list={['skill-card', `skill-card--${index + 1}`]} data-reveal style={`--reveal-delay: ${index * 90}ms`}>
+      <div class="skill-card__head"><span>VOL. 0{index + 1}</span><span>{editions[index]}</span></div>
+      <div class="skill-card__art" aria-hidden="true">
+        <svg viewBox="0 0 320 120" fill="none">
+          {index === 0 && <><path d="M110 10H55v100h55M210 10h55v100h-55M180 5l-40 110" /><circle cx="160" cy="60" r="48" /></>}
+          {index === 1 && <><rect x="45" y="12" width="230" height="98" rx="3" /><path d="M45 34h230M124 34v76M60 49h49v45H60zM141 51h114M141 67h83M141 83h100" /><circle cx="58" cy="23" r="2" /><circle cx="68" cy="23" r="2" /></>}
+          {index === 2 && <><ellipse cx="160" cy="24" rx="75" ry="19" /><path d="M85 24v68c0 25 150 25 150 0V24M85 47c0 25 150 25 150 0M85 70c0 25 150 25 150 0" /></>}
+          {index === 3 && <><rect x="55" y="10" width="210" height="100" rx="3" /><path d="M55 31h210M78 48l18 16-18 16M111 80h41M185 53h57M185 68h37M185 83h47" /></>}
+        </svg>
+        <span>{symbols[index]}</span>
+      </div>
       <h3>{group.title}</h3>
       <ul>
-        {group.items.map((item) => <li><span></span>{item}</li>)}
+        {group.items.map((item) => <li>{item}</li>)}
       </ul>
     </section>
   ))}
